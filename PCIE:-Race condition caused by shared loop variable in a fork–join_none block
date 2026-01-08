@@ -23,10 +23,11 @@ end
 
 ✅ Fix
 for (int tag=0; tag<32; tag++) begin
-  int local_tag = tag;
+  int local_tag = tag; //it's not work 
   fork
-    wait_for_cpl(local_tag);
+    wait_for_cpl(tag);
   join_none
+wait fork; // it's work and print0,1,2 inside 
 end
 PCIe-specific reason this matters
 
